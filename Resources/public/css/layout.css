@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+}
+
+#container {
+    margin: 20px auto;
+    float: none;
+}
+
+    #header h1 {
+        font-size: 16px;
+    }
+    #header .description {
+        margin-top: 20px;
+    }
+
+#body {
+    margin-top: 20px;
+}
+
+.sns-buttons {
+    height: 20px;
+}
+
+#footer {
+    margin-top: 20px;
+}

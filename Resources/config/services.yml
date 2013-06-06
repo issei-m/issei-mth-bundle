@@ -1,0 +1,2 @@
+parameters:
+    issei_mth.current_url_cache_save_path: %kernel.root_dir%/IsseiMth.current_url.cache

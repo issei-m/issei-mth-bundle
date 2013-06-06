@@ -1,0 +1,80 @@
+{% extends '::html5_base.html.twig' %}
+
+{% block title %}ホルモンの新曲「え・い・り・あ・ん」当たりページはここだ！{% endblock %}
+{% block description %}先日公開された亮君の嫌がらせに対抗してみました。一定時間毎に変わる「当たりページ」を追跡し、更新しています。{% endblock %}
+{% block keywords %}マキシマム ザ ホルモン,Maximum the Hormone,え・い・り・あ・ん,新曲,New Song{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    {% stylesheets
+        '@IsseiMthBundle/Resources/public/css/layout.css'
+        '@IsseiMthBundle/Resources/public/css/main.css'
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen">
+    {% endstylesheets %}
+{% endblock %}
+
+{#% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %#}
+
+{% set use_xfbml = true %}
+{% block header_addition %}
+    <meta property="og:title" content="ホルモンの新曲「え・い・り・あ・ん」当たりページはここだ！">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="先日公開された亮君の嫌がらせに対抗してみました。一定時間毎に変わる「当たりページ」を追跡し、更新しています。">
+    <meta property="og:url" content="http://issei-m.com/omeko-mth/">
+    {% image '@IsseiMthBundle/Resources/public/images/congratulations.png' output='/images/issei-mth-congratulations.png' %}
+        <meta property="og:image" content="http://issei-m.com{{ asset_url }}">
+    {% endimage %}
+
+    {% if 'prod' == app.environment %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-40935728-2', 'issei-m.com');
+            ga('send', 'pageview');
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block footer_javascripts %}
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+{% endblock %}
+
+{# --- #}
+
+{% block contents %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="container" class="span7">
+        <div id="header">
+            <h1>ホルモンの新曲「え・い・り・あ・ん」当たりページはここだ！</h1>
+
+            <div class="description">
+                先日公開された<a href="http://www.55mth.com/2013/6years/pc/pc_page.html" target="_blank">亮君の嫌がらせ</a>に<b>対抗</b>してみました。<br>
+                一定時間毎に変わる「当たりページ」を追跡し、更新しています。
+            </div>
+        </div>
+
+        <div id="body">
+            {% block article %}{% endblock %}
+        </div>
+
+        <div id="footer">
+            <address>&copy; 2013 <a href="http://issei-m.com/">issei-m.com</a></address>
+        </div>
+    </div>
+{% endblock %}
